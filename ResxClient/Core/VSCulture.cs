@@ -49,7 +49,7 @@ namespace ResourceManager.Core
                     {
                         IResourceFile culturedFile = data.ResxFile.FileGroup.Files[culture.Culture];
 
-                        if (!culturedFile.Data.ContainsKey(data.Name))
+                        if (!culturedFile.Data.ContainsKey(data.Name) || culturedFile.Data[data.Name].Value == string.Empty)
                         {
                             notExisting.Add(data);
                         }
